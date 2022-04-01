@@ -22,7 +22,7 @@
                 .Add<IPasswordHasher, PasswordHasher>()
                 .Add<IUserService, UserService>()
                 .Add<ICarService, CarService>()
-                //.Add<ICommitService, CommitService>()
+                .Add<IIssueService, IssueService>()
                 .Add<IViewEngine, CompilationViewEngine>())
                 .WithConfiguration<ApplicationDbContext>(context => context
                     .Database.Migrate())

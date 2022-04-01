@@ -39,7 +39,7 @@ namespace CarShop.Services.Service
                 OwnerId = userId
             };
             ;
-            db.Cars.Add(car);
+            db.Add(car);
             db.SaveChanges();
 
             return errors;
@@ -78,6 +78,11 @@ namespace CarShop.Services.Service
         public bool IsUserMechanic(string userId)
         {
             return users.IsMechanic(userId);
+        }
+
+        public bool IsOwnsCar (string userId, string carId)
+        {
+            return db.Cars.Any(c => c.Id == carId && c.OwnerId == userId);
         }
     }
 }

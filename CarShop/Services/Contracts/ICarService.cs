@@ -14,5 +14,7 @@ namespace CarShop.Services.Contracts
         ICollection<CarAllViewModel> GetAllCars(string userId);
 
         bool IsUserMechanic(string userId);
+        
+        bool IsOwnsCar(string userId, string carId);
     }
 }
